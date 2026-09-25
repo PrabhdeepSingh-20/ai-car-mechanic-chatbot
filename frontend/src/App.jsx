@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./App.css";
 
-const API = "http://127.0.0.1:8000/api";
+const API = "http://51.21.160.45:8000/api";
 
 function App() {
   const [messages, setMessages] = useState([
