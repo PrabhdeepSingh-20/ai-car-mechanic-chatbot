@@ -1,9 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/proxy?path=:path*"
-    }
+  "routes": [
+    { "src": "/api/chat", "methods": ["POST"], "dest": "/api/proxy?path=chat%2F" },
+    { "src": "/api/chat/", "methods": ["POST"], "dest": "/api/proxy?path=chat%2F" },
+    { "src": "/api/diagnosis", "methods": ["POST"], "dest": "/api/proxy?path=diagnosis%2F" },
+    { "src": "/api/diagnosis/", "methods": ["POST"], "dest": "/api/proxy?path=diagnosis%2F" },
+    { "src": "/api/upload", "methods": ["POST"], "dest": "/api/proxy?path=upload%2F" },
+    { "src": "/api/upload/", "methods": ["POST"], "dest": "/api/proxy?path=upload%2F" },
+    { "src": "/api/booking", "methods": ["POST"], "dest": "/api/proxy?path=booking%2F" },
+    { "src": "/api/booking/", "methods": ["POST"], "dest": "/api/proxy?path=booking%2F" },
+    { "src": "/api/booking/(?<id>[^/]+)", "methods": ["GET"], "dest": "/api/proxy?path=booking/$id" },
+    { "src": "/api/booking/(?<id>[^/]+)/", "methods": ["GET"], "dest": "/api/proxy?path=booking/$id" }
   ]
 }
